@@ -11,7 +11,7 @@ class New(models.Model):
         verbose_name = 'Новость'
         ordering = ("-date",)
 
-    date = models.DateField(verbose_name='Дата (d-M-Y)')
+    date = models.DateField(verbose_name='Дата')
     subject = models.CharField(verbose_name='Заголовок новости', max_length=256)
     content = models.TextField(verbose_name='Содержание новости')
     user = models.ForeignKey(User, verbose_name='Пользователь', related_name='news', on_delete=models.CASCADE)
