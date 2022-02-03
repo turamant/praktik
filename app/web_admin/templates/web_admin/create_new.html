@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Форма ввода новостей</h3>
+
+<form method="post">
+    {% csrf_token %}
+    <table border="1">
+        {{ form }}
+    </table>
+    <button type="submit">Add new </button>
+</form>
+
+{% endblock content %}
