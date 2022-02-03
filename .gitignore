@@ -6,3 +6,4 @@ settings_dev.py
 .env.dev
 asenv
 TreeProject
+app/db.sqlite3
