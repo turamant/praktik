@@ -1,6 +1,7 @@
 .idea
 *.pyc
 settings_dev.py
+settings_prod.py
 .env.prod.db
 .env.prod
 .env.dev

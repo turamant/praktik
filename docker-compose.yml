@@ -2,10 +2,10 @@ version: '3.8'
 
 services:
   web:
-    build: ./meduza_config
+    build: ./app
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./meduza_config/:/usr/src/meduza_config/
+      - ./app/:/usr/src/app/
     ports:
       - 8000:8000
     env_file:
