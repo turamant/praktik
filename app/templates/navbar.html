@@ -1,0 +1,16 @@
+<header>
+    <div>
+          <a href="{% url 'signup' %}">Signup</a>
+          <a href="{% url 'web_admin:create_new' %}">CreateNew</a>
+
+        Logged in as: {{ request.user.username }}
+        <a href="{% url 'logout' %}">
+          Logout
+        </a>
+
+      <a href="{% url 'login' %}">
+          Login
+      </a>
+
+    </div>
+</header>

@@ -108,14 +108,24 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
+DATE_FORMAT = ( ( 'd.m.Y' ))
+DATE_INPUT_FORMATS = ( ('%d.%m.%Y'),)
+DATETIME_FORMAT = (( 'd.m.Y H:i' ))
+DATETIME_INPUT_FORMATS = (('%d.%m.%Y %H:%i'),)
+
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_L10N = False
 
+USE_TZ = False
+
+REST_FRAMEWORK = {
+    'DATE_FORMAT': '%d.%m.%Y',
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -126,3 +136,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/web'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/login'

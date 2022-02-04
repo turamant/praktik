@@ -1,23 +1,22 @@
-from django.views.generic import CreateView
+from django.urls import reverse
+from django.views.generic import CreateView, TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from web_admin.forms import NewCreateForm
+from web_admin.forms import CustomUserCreateForm
 
 
-class CreateNew(CreateView):
+class LandingPageView(TemplateView):
+    template_name = "landing.html"
+
+class CreateNew(LoginRequiredMixin,CreateView):
     form_class = NewCreateForm
     template_name = 'web_admin/create_new.html'
     success_url = '/'
 
-'''
-def create_new(request):
-    news = New.objects.all()
-    if request.method == 'POST':
-        form = NewCreateForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-    else:
-        form = NewCreateForm()
-    context = {'form': form, 'news': news}
-    return render(request, 'web_admin/create_new.html', context)
-'''
+class SignUpView(CreateView):
+    template_name = 'registration/signup.html'
+    form_class = CustomUserCreateForm
+
+    def get_success_url(self):
+        return reverse('login')
