@@ -9,5 +9,3 @@ class GetListAllNew(ListAPIView):
 
     def get_queryset(self):
         return New.objects.all()
-
-

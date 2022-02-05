@@ -7,10 +7,12 @@ from web_admin.models import New
 
 User = get_user_model()
 
+
 class NewCreateForm(forms.ModelForm):
     class Meta:
         model = New
         fields = '__all__'
+
 
 class CustomUserCreateForm(UserCreationForm):
     class Meta:

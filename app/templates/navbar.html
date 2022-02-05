@@ -1,16 +1,30 @@
 <header>
     <div>
-          <a href="{% url 'signup' %}">Signup</a>
-          <a href="{% url 'web_admin:create_new' %}">CreateNew</a>
-
         Logged in as: {{ request.user.username }}
-        <a href="{% url 'logout' %}">
-          Logout
-        </a>
-
+    </div>
+    <div>
       <a href="{% url 'login' %}">
           Login
       </a>
-
+      <a href="{% url 'signup' %}">
+          Signup
+      </a>
+      <a href="{% url 'logout' %}">
+          Logout
+      </a>
     </div>
+
 </header>
+<div class="container">
+    <div class="is-size-4 mb-4">
+          <a href="{% url 'web_admin:create_new' %}">CreateNew</a>
+    </div>
+</div>
+<br/>
+    {% if request.user.is_authenticated %}
+        <div class="container">
+            <a href="/api/v1/new/list/all/new/">
+                Смотреть все новсти через REST API
+            </a>
+        </div>
+    {% endif %}

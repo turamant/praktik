@@ -7,12 +7,14 @@ from web_admin.forms import CustomUserCreateForm
 
 
 class LandingPageView(TemplateView):
-    template_name = "landing.html"
+    template_name = "base.html"
 
-class CreateNew(LoginRequiredMixin,CreateView):
+
+class CreateNew(LoginRequiredMixin, CreateView):
     form_class = NewCreateForm
     template_name = 'web_admin/create_new.html'
     success_url = '/'
+
 
 class SignUpView(CreateView):
     template_name = 'registration/signup.html'

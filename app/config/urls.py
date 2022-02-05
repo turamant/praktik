@@ -8,8 +8,8 @@ from web_admin.views import SignUpView, LandingPageView
 
 urlpatterns = [
     path('ask_admin/', admin.site.urls),
-    path('', LandingPageView.as_view(), name='landing'),
-    path('web/', include('web_admin.urls', namespace='web_admin')),
+    path('', LandingPageView.as_view(), name='base'),
+    path('', include('web_admin.urls', namespace='web_admin')),
     path('api/v1/new/', include('apis.urls', namespace='apis')),
     path('signup', SignUpView.as_view(), name='signup'),
     path('login/', LoginView.as_view(), name='login'),

@@ -5,5 +5,5 @@ from web_admin.views import CreateNew
 app_name = 'web_admin'
 
 urlpatterns = [
-    path('', CreateNew.as_view(), name='create_new'),
+    path('web/', CreateNew.as_view(), name='create_new'),
 ]
